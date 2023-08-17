@@ -1,0 +1,27 @@
+{%  extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+ pagina de Products
+{% endblock titulo %}
+
+{% block contenido %}
+    <h1>{{ titulo }}</h1>
+
+      <table>
+            <tr>
+                <th>Id</th>
+                <th>Product</th>
+                <th>Price</th>
+            </tr>
+        </table>
+
+    {% for p in products %}
+        <tr>
+            <td>{{ p.id }}</td>
+            <td>{{ p.product_name }}</td>
+            <td>{{ p.product_price }}</td>
+        </tr>
+
+    {% endfor %}
+{% endblock contenido %}
