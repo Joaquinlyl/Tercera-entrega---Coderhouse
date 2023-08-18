@@ -42,6 +42,54 @@ def productsForm2(request):
 
     return render(request, "aplicacion/curso2.html", {"form": miForm} )
 
+def sellerForm(request):
+    if request.method == "POST":
+        curso = seller(username = request.POST['username'], password = request.POST['password'])
+
+        curso.save()
+        return HttpResponse("Se guardo el vendedor con exito")
+    return render( request, "aplicacion/sellerForm.html")
+
+def sellerForm2(request):
+    if request.method == "POST":
+        miform = sellerForm(request.POST)
+        if miform.is_valid():
+            username = miform.cleaned_data.get('username')
+            password = miform.cleaned_data.get('password')
+            curso = product(username = username, password = password)
+
+            curso.save()
+            return  render(request, "aplicacion/base.html")
+
+    else:
+        miForm: productsForm()
+
+    return render(request, "aplicacion/curso2.html", {"form": miForm} )
+
+def customerForm(request):
+    if request.method == "POST":
+        curso = seller(username = request.POST['username'], password = request.POST['password'])
+
+        curso.save()
+        return HttpResponse("Se guardo el cliente con exito")
+    return render( request, "aplicacion/customerForm.html")
+
+def customerForm2(request):
+    if request.method == "POST":
+        miform = sellerForm(request.POST)
+        if miform.is_valid():
+            username = miform.cleaned_data.get('username')
+            password = miform.cleaned_data.get('password')
+            curso = product(username = username, password = password)
+
+            curso.save()
+            return  render(request, "aplicacion/base.html")
+
+    else:
+        miForm: productsForm()
+
+    return render(request, "aplicacion/curso2.html", {"form": miForm} )
+
 def buscarProducto(request):
     return render(request, "aplicacion/buscarProducto.html")
 

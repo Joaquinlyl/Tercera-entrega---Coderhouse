@@ -12,6 +12,12 @@ urlpatterns = [
     path('productFrom/', productsForm, name="productForm"),
     path('productFrom2/', productsForm2, name="productForm2"),
 
+    path('customerFrom/', customerForm, name="customerForm"),
+    path('customerFrom2/', customerForm2, name="customerForm2"),
+
+    path('sellerFrom/', sellerForm, name="sellerForm"),
+    path('sellerFrom2/', sellerForm2, name="sellerForm2"),
+
     path('buscar_producto/', buscarProducto, name="buscar_producto"),
     path('buscar2/', buscar2, name="buscar2"),
 ]
