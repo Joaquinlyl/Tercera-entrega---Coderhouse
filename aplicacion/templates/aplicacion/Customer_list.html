@@ -2,16 +2,16 @@
 {% load static %}
 
 {% block titulo %}
- Sellers
+ Customers
 {% endblock titulo %}
 
 {% block contenido %}
     <table>
         <tr>
-            <td width="200"> <h2>Sellers</h2></td>
+            <td width="200"> <h2>Customers</h2></td>
             <td>
                 <a
-                    href="{% url 'create_seller' %}"
+                    href="{% url 'create_customer' %}"
                     class="btn btn-primary btn-sm"
                     ><i class="fa fa-plus fa-lg" title="New Record"></i>
                 </a>
@@ -30,21 +30,21 @@
         </TR>
     </thead>
     <tbody>
-    {% for seller in sellers %}
+    {% for customer in customer_list %}
     <tr>
-        <td>{{ seller.id }}</td>
-        <td>{{ seller.username }}</td>
-        <td>{{ seller.password }}</td>
+        <td>{{ customer.id }}</td>
+        <td>{{ customer.username }}</td>
+        <td>{{ customer.password }}</td>
 
         <td>
             <a
-              href="{% url 'update_seller' seller.id %}"
+              href="{% url 'update_customer' customer.id %}"
               class="btn btn-primary"
               style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
               ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
             </a>
             <a
-              href="{% url 'delete_seller' seller.id %}"
+              href="{% url 'delete_customer' customer.id %}"
               class="btn btn-danger"
               style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
               ><i class="fa fa-trash fa-sm" title="Delete Record"></i>

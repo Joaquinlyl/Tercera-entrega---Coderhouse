@@ -4,7 +4,7 @@ from .models import *
 
 
 
-admin.site.register(customer)
-admin.site.register(seller)
-admin.site.register(product)
-admin.site.register(category)
+admin.site.register(Customer)
+admin.site.register(Seller)
+admin.site.register(Product)
+admin.site.register(Category)

@@ -6,10 +6,10 @@
 {% endblock titulo %}
 
 {% block contenido %}
-     <h2> Buscar productos</h2>
-    <form action="/buscar2" method="get">
+     <h2> Search Product</h2>
+    <form action="/search2" method="get">
             {% csrf_token %}
-          <p>Producto a buscar: <input type="text" name="buscar" id="buscar" ></p>
+          <p>Product: <input type="text" name="buscar" id="buscar" ></p>
             <input type="submit" value="Enviar">
     </form>
 {% endblock contenido %}

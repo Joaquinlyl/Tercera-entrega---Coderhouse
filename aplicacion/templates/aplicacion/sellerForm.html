@@ -1,16 +1,13 @@
-{%  extends 'aplicacion/base.html' %}
+{% extends 'aplicacion/base.html' %}
 {% load static %}
-
-{% block titulo %}
- pagina de formulario
-{% endblock titulo %}
+{% block titulo %}Sellers{% endblock titulo %}
 
 {% block contenido %}
-     <h2> Registrar nuevo vendedor</h2>
-    <form action="" method="post">
+    <h2>Seller</h2>
+    <form action="" method="POST">
         {% csrf_token %}
-          <p>Nombre Usuario: <input type="text" name="username" id="username" ></p>
-          <p>Contrasena: <input type="text" name="password" id="password" ></p>
-            <input type="submit" value="Enviar">
+        <p>Username: <input type="text" name="seller_username" id="seller_username" ></p>
+        <p>Paswword: <input type="text" name="seller_password" id="seller_password" ></p>
+        <input type="submit" value="Enviar">
     </form>
 {% endblock contenido %}

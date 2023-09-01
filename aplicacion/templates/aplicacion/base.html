@@ -6,26 +6,41 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Eccomerce del Joaco </title>
+        <title>Good-taste shopping </title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href= "{% static 'aplicacion/css/styles.css'%}" rel="stylesheet" />
+             <!-- fontawesome)-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">*The good way to shop*</a>
-                <a class="navbar-brand" href="{% url 'productForm' %}">Registra un producto</a>
-                <a class="navbar-brand" href="{% url 'customerForm' %}">Registra a un cliente</a>
-                <a class="navbar-brand" href="{% url 'sellerForm' %}">Registra a un vendedor</a>
-                 <a class="navbar-brand" href="{% url 'buscar_producto' %}">Busca en nuestro catalogo</a>
 
+                {% if user.is_authenticated %}
+                    <a class="navbar-brand" href="#!">*The good way to shop*</a>
+                    <a class="navbar-brand" href="{% url 'customers' %}">Customers</a>
+                    <a class="navbar-brand" href="{% url 'sellerForm' %}">New seller</a>
+                    <a class="navbar-brand" href="{% url 'SearchProduct' %}">Search Products</a>
+                    <a class="navbar-brand" href="{% url 'products' %}">Catalogue</a>
+                    <a class="navbar-brand" href="{% url 'sellers' %}">Sellers</a>
+                    <p style="color:green">Hello {{user.username}}!</p>
+                    <div class="text-center">
+                        <img src="{{ request.session.avatar }}" height="40px" weight="40px"/>
+                    </div>
+                    <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
+                    <a class="btn btn-primary" href="{% url 'edit_profile' %}">Profile</a>
+                {% else %}
+
+                    <a class="btn btn-primary" href="{% url 'login' %}">Login</a>
+                    <a class="btn btn-success" href="{% url 'registry' %}">Register</a>
+                {% endif %}
                 </div>
-            </div>
+
         </nav>
         <!-- Header-->
         <header class="bg-dark py-5">

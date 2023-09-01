@@ -2,26 +2,31 @@
 {% load static %}
 
 {% block titulo %}
- pagina de Products
+ Products page
 {% endblock titulo %}
 
 {% block contenido %}
-    <h1>{{ titulo }}</h1>
+     <h1>{{ titulo|upper }} - {% now "d / m / Y " %}</h1>
+     <h4>Quantity of products {{ products|length }}</h4>
 
-      <table>
-            <tr>
-                <th>Id</th>
-                <th>Product</th>
-                <th>Price</th>
-            </tr>
-        </table>
-
+      <table class="table table-striped">
+          <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                </tr>
+          </thead>
+          <tbody>
     {% for p in products %}
         <tr>
             <td>{{ p.id }}</td>
             <td>{{ p.product_name }}</td>
             <td>{{ p.product_price }}</td>
         </tr>
-
     {% endfor %}
+    </tbody>
+    </table>
 {% endblock contenido %}
+
+
