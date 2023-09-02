@@ -14,7 +14,7 @@ class Customer(models.Model):
     def __str__(self):
         return f"{self.username},{self.password}"
 
-class Category(models.Model) :
+class Category(models.Model):
     Category_name = models.CharField(max_length=40)
 
     def __str__(self):

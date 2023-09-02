@@ -140,23 +140,35 @@ def sellers(request):
 
 class Customer_list(LoginRequiredMixin,ListView):
     model = Customer
-
-
 class CustomerCreate(LoginRequiredMixin, CreateView):
     model = Customer
     fields = ['username', 'password']
     success_url = reverse_lazy('customers')
-
-
 class CustomerUpdate(LoginRequiredMixin, UpdateView):
     model = Customer
     fields = ['username', 'password']
     success_url = reverse_lazy('customers')
-
-
 class CustomerDelete(LoginRequiredMixin, DeleteView):
     model = Customer
     success_url = reverse_lazy('customers')
+
+#-----------------------------------------------#
+
+class Category_list(LoginRequiredMixin,ListView):
+    model = Category
+class CategoryCreate(LoginRequiredMixin, CreateView):
+    model = Category
+    fields = ['Category_name']
+    success_url = reverse_lazy('categories')
+class CategoryUpdate(LoginRequiredMixin, UpdateView):
+    model = Category
+    fields = ['Category_name']
+    success_url = reverse_lazy('categories')
+class CategoryDelete(LoginRequiredMixin, DeleteView):
+    model = Category
+    success_url = reverse_lazy('categories')
+
+
 
 
 # Login/Logout/register
@@ -219,6 +231,8 @@ def editProfile(request):
         form = UserEditForm(instance=user)
     return render(request, "aplicacion/editProfile.html", {'form': form, 'usuario': user.username})
 
+
+#Avatar
 @login_required
 def addAvatar(request):
     if request.method == "POST":
