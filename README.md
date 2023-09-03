@@ -1,5 +1,7 @@
 # E-commerce de Ropa
 
+Explicacion y pruebas: https://docs.google.com/spreadsheets/d/1m-LlkE-pE9fBnCejAFrcWIoqU8kFFNe8PALfO8cUjSw/edit?usp=sharing
+
 Bienvenido al repositorio del proyecto de entraga final de Coderhouse. Este proyecto utiliza Visual Studio, Django y Python para crear una plataforma donde luchadores de Jiu jitsu brasilero podran inscribirse en las categorias que deseen y podran observar que objetos estaran a la venta al momento de la compentenica. Queda mucho por ser desarollado, mayormente la relacion logica entre los modelos. Este proyecto lo mantendre y seguire actualizando para poder utilizarlo en mi gimnasio.
 
 ## Características
