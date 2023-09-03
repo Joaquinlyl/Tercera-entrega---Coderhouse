@@ -7,6 +7,7 @@ Bienvenido al repositorio del proyecto de entraga final de Coderhouse. Este proy
 - Require login de entrada con opcion de registrarse. El usuario podra modificar sus datos y su avatar.
 - Permite crear luchadores con Kimono(Gi), luchadores sin Kimono y categorias de lucha para luego impactarlos en la base de datos bajo la metodologia CRUD.
 - Busqueda de productos que estaran en stock por formulario.
+- Usuario y contraseña adminstrador: admin-12345
 
 ## Requisitos Previos
 
