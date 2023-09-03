@@ -2,16 +2,16 @@
 {% load static %}
 
 {% block titulo %}
- Categories
+ Customers
 {% endblock titulo %}
 
 {% block contenido %}
     <table>
         <tr>
-            <td width="200"> <h2>Categories</h2></td>
+            <td width="200"> <h2>Sellers</h2></td>
             <td>
                 <a
-                    href="{% url 'create_category' %}"
+                    href="{% url 'create_seller' %}"
                     class="btn btn-primary btn-sm"
                     ><i class="fa fa-plus fa-lg" title="New Record"></i>
                 </a>
@@ -24,25 +24,27 @@
     <thead>
         <TR>
             <th>ID</th>
-            <th>Category name</th>
+            <th>Username</th>
+            <th>Password</th>
             <th>Actions</th>
         </TR>
     </thead>
     <tbody>
-   {% for category in object_list %}
+    {% for seller in seller_list %}
     <tr>
-        <td>{{ category.id }}</td>
-        <td>{{ category.Category_name }}</td>
+        <td>{{ seller.id }}</td>
+        <td>{{ seller.username }}</td>
+        <td>{{ seller.password }}</td>
 
         <td>
             <a
-              href="{% url 'update_category' category.pk %}"
+              href="{% url 'update_seller' seller.id %}"
               class="btn btn-primary"
               style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
               ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
             </a>
             <a
-              href="{% url 'delete_category' category.pk %}"
+              href="{% url 'delete_seller' seller.id %}"
               class="btn btn-danger"
               style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
               ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
@@ -55,4 +57,3 @@
 
     </table>
 {% endblock contenido %}
-

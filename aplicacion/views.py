@@ -17,15 +17,16 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 
 
-
+@login_required
 def home(request):
     return render(request, "aplicacion/home.html")
-
+@login_required
+def about_me(request):
+    return render(request, "aplicacion/about_me.html")
 @login_required
 def products(request):
     contexto = {'products': Product.objects.all()}
     return render(request, "aplicacion/products.html", contexto)
-
 
 @login_required
 def customers(request):
@@ -168,8 +169,21 @@ class CategoryDelete(LoginRequiredMixin, DeleteView):
     model = Category
     success_url = reverse_lazy('categories')
 
+#-----------------------------------------------#
 
-
+class Seller_list(LoginRequiredMixin,ListView):
+    model = Seller
+class SellerCreate(LoginRequiredMixin, CreateView):
+    model = Seller
+    fields = ['username', 'password']
+    success_url = reverse_lazy('sellers')
+class SellerUpdate(LoginRequiredMixin, UpdateView):
+    model = Seller
+    fields = ['username', 'password']
+    success_url = reverse_lazy('sellers')
+class SellerDelete(LoginRequiredMixin, DeleteView):
+    model = Seller
+    success_url = reverse_lazy('sellers')
 
 # Login/Logout/register
 
